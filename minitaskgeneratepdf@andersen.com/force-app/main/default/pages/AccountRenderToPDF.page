@@ -1,0 +1,37 @@
+
+<apex:page standardController="Account" >
+  <apex:pageBlock title="Account" >
+    <apex:form >
+      <apex:pageBlockSection title="{!Account.id}" columns="2">
+        <apex:outputField value="{!Account.Name}"/>
+        <apex:outputField value="{!Account.Phone}"/>
+        <apex:outputField value="{!Account.BillingCountry}" />
+        <apex:outputField value="{!Account.BillingPostalCode}" />
+        <apex:outputField value="{!Account.BillingState}" />
+        <apex:outputField value="{!Account.BillingCity}" />
+        <apex:outputField value="{!Account.BillingStreet}" />
+        <apex:outputField value="{!Account.ShippingCountry}" />
+        <apex:outputField value="{!Account.ShippingPostalCode}" />
+        <apex:outputField value="{!Account.ShippingState}" />
+        <apex:outputField value="{!Account.ShippingCity}" />
+        <apex:outputField value="{!Account.ShippingStreet}" />
+      </apex:pageBlockSection>
+    </apex:form>
+  </apex:pageBlock>
+  <apex:pageBlock title="Contact">
+   <apex:outputPanel id="contactDetails">
+    <apex:pageBlockTable value="{!Account.Contacts}" var="con" id="conlist" title="Contact">
+      <apex:column value="{!con.Name}"/>
+      <apex:Column value="{!con.Phone}" />
+      <apex:Column value="{!con.Email}" />
+      <apex:column headerValue="Mailing Address">
+        <apex:outputField value="{!con.MailingCountry}" />
+        <apex:outputField value="{!con.MailingPostalCode}" />
+        <apex:outputField value="{!con.MailingState}" />
+        <apex:outputField value="{!con.MailingCity}" />
+        <apex:outputField value="{!con.MailingStreet}" />
+      </apex:column>
+     </apex:pageBlockTable>
+    </apex:outputPanel>
+  </apex:pageBlock>
+</apex:page>
